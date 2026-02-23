@@ -20,14 +20,14 @@ def FindClumps(Genome, k, L, t):
     return list(all_clumps)
 
 def load_genome(filename):
-    """Loads and cleans the genome file."""
+    #Loads and cleans the genome file.
     with open(filename, 'r') as f:
         lines = f.readlines()
         if lines and lines[0].startswith('>'):
             return "".join(line.strip() for line in lines[1:])
         return "".join(line.strip() for line in lines)
 
-file_name = '/Users/nasserhadi/Downloads/hadi_protfolio/E_coli_genome.txt'
+file_name = ''
 
 try:
     genome = load_genome(file_name)
