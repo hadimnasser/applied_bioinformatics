@@ -1,7 +1,7 @@
 import random
 
 def GetScore(Motifs):
-    """Calculates the score of a motif matrix (sum of mismatches in columns)."""
+   # Calculates the score of a motif matrix (sum of mismatches in columns)
     k = len(Motifs[0])
     t = len(Motifs)
     score = 0
@@ -13,7 +13,7 @@ def GetScore(Motifs):
     return score
 
 def GetProfileWithPseudocounts(Motifs):
-    """Creates a Profile matrix using Laplace's Rule (adding 1 to all counts)."""
+    #Creates a Profile matrix using Laplace's Rule (adding 1 to all counts).
     t = len(Motifs)
     k = len(Motifs[0])
     profile = [[1.0] * k for _ in range(4)]
@@ -28,10 +28,9 @@ def GetProfileWithPseudocounts(Motifs):
     return profile
 
 def ProfileRandomlyGeneratedKmer(Text, k, Profile):
-    """
-    Calculates probabilities for all k-mers in Text given the Profile, 
-    and randomly selects one based on those probabilities.
-    """
+    
+    #Calculates probabilities for all k-mers in Text given the Profile, and randomly selects one based on those probabilities.
+    
     nuc_to_idx = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
     probabilities = []
     
@@ -100,8 +99,7 @@ def RunGibbsSampler(Dna, k, t, N, starts=20):
             GlobalBestMotifs = current_motifs
             
     return GlobalBestMotifs
-
-# --- Execution Block ---
+#sample from study course
 if __name__ == "__main__":
     # Sample Input Parsing
     input_str = """15 20 2000
